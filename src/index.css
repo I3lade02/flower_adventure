@@ -1,0 +1,348 @@
+@import 'tailwindcss';
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.realistic-rose {
+  isolation: isolate;
+  perspective: 900px;
+  transform-style: preserve-3d;
+}
+
+.realistic-rose-halo {
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle, rgba(244, 63, 94, 0.34), rgba(251, 113, 133, 0.2) 42%, transparent 72%);
+  filter: blur(24px);
+}
+
+.realistic-rose-ground {
+  border-radius: 9999px;
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.28), transparent 70%);
+  filter: blur(8px);
+}
+
+.realistic-rose-stem {
+  border-radius: 9999px;
+  background:
+    linear-gradient(90deg, #052e1f, #166534 24%, #4ade80 48%, #14532d 68%, #041f17);
+  box-shadow:
+    inset 4px 0 5px rgba(255, 255, 255, 0.22),
+    inset -5px 0 8px rgba(0, 38, 23, 0.6),
+    0 16px 24px rgba(6, 78, 59, 0.22);
+  transform-origin: 50% 100%;
+}
+
+.realistic-rose-stem::before {
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 42%;
+  width: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.06));
+  content: "";
+}
+
+.realistic-rose-stem::after {
+  position: absolute;
+  inset: -4px;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgba(4, 120, 87, 0.26);
+  filter: blur(6px);
+  content: "";
+}
+
+.realistic-rose-thorn {
+  position: absolute;
+  width: 18px;
+  height: 14px;
+  background: linear-gradient(135deg, #0f5132, #79c987 56%, #063d2a);
+  filter: drop-shadow(0 1px 1px rgba(6, 78, 59, 0.35));
+}
+
+.realistic-rose-thorn-left {
+  right: 0.68rem;
+  clip-path: polygon(100% 50%, 0 0, 16% 100%);
+}
+
+.realistic-rose-thorn-right {
+  left: 0.68rem;
+  clip-path: polygon(0 50%, 100% 0, 84% 100%);
+}
+
+.realistic-rose-leaf {
+  position: absolute;
+  bottom: 9.1rem;
+  width: 7.8rem;
+  height: 3.45rem;
+  background:
+    radial-gradient(ellipse at 34% 25%, rgba(255, 255, 255, 0.28), transparent 34%),
+    linear-gradient(135deg, #86efac, #15803d 46%, #064e3b);
+  box-shadow:
+    inset 6px 6px 10px rgba(255, 255, 255, 0.2),
+    inset -9px -8px 12px rgba(4, 50, 32, 0.46),
+    0 12px 18px rgba(6, 78, 59, 0.18);
+}
+
+.realistic-rose-leaf::before {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  left: 10%;
+  height: 2px;
+  border-radius: 9999px;
+  background: rgba(220, 252, 231, 0.72);
+  content: "";
+}
+
+.realistic-rose-leaf::after {
+  position: absolute;
+  top: 30%;
+  left: 28%;
+  width: 42%;
+  height: 1px;
+  border-radius: 9999px;
+  background: rgba(220, 252, 231, 0.42);
+  box-shadow:
+    16px 12px 0 rgba(220, 252, 231, 0.32),
+    -14px 13px 0 rgba(220, 252, 231, 0.3);
+  content: "";
+}
+
+.realistic-rose-leaf-left {
+  right: 50%;
+  margin-right: 0.1rem;
+  border-radius: 100% 0 100% 0 / 100% 0 100% 0;
+  transform-origin: 94% 74%;
+}
+
+.realistic-rose-leaf-right {
+  left: 50%;
+  margin-left: 0.2rem;
+  border-radius: 0 100% 0 100% / 0 100% 0 100%;
+  transform-origin: 6% 74%;
+}
+
+.realistic-rose-head-wrap {
+  transform-origin: 50% 78%;
+  transform-style: preserve-3d;
+}
+
+.realistic-rose-head {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 28px 28px rgba(119, 7, 37, 0.28));
+  transform-style: preserve-3d;
+}
+
+.rose-calyx {
+  position: absolute;
+  top: 61%;
+  left: 50%;
+  z-index: 6;
+  width: 90px;
+  height: 50px;
+  margin-left: -45px;
+  border-radius: 50% 50% 42% 42%;
+  background:
+    radial-gradient(ellipse at 50% 10%, #bbf7d0, transparent 45%),
+    linear-gradient(180deg, #22c55e, #166534 74%, #052e1f);
+  box-shadow:
+    inset 0 7px 8px rgba(255, 255, 255, 0.24),
+    inset 0 -10px 10px rgba(0, 34, 21, 0.46);
+}
+
+.rose-calyx::before,
+.rose-calyx::after {
+  position: absolute;
+  bottom: 13px;
+  width: 44px;
+  height: 18px;
+  background: linear-gradient(135deg, #34d399, #065f46);
+  content: "";
+}
+
+.rose-calyx::before {
+  left: -28px;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(-22deg);
+}
+
+.rose-calyx::after {
+  right: -28px;
+  border-radius: 0 100% 0 100%;
+  transform: rotate(22deg);
+}
+
+.rose-petal-wrap {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  z-index: var(--petal-z);
+  width: var(--petal-width);
+  height: var(--petal-height);
+  margin-top: var(--petal-margin-y);
+  margin-left: var(--petal-margin-x);
+  filter: drop-shadow(0 8px 8px rgba(73, 4, 26, 0.22));
+  transform-origin: 50% 92%;
+}
+
+.rose-petal {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(255, 205, 216, 0.14);
+  border-radius: 58% 42% 56% 44% / 74% 72% 32% 24%;
+  background:
+    radial-gradient(ellipse at 33% 16%, var(--petal-light), rgba(255, 255, 255, 0.1) 19%, transparent 34%),
+    radial-gradient(ellipse at 68% 78%, var(--petal-dark), transparent 54%),
+    linear-gradient(145deg, var(--petal-light), var(--petal-main) 42%, var(--petal-dark));
+  box-shadow:
+    inset 9px 10px 12px rgba(255, 255, 255, 0.2),
+    inset -13px -20px 24px rgba(45, 0, 17, 0.46),
+    inset 0 -5px 10px rgba(255, 255, 255, 0.08);
+  transform: translate(var(--petal-shift-x), var(--petal-shift-y)) scale(var(--petal-scale)) rotate(var(--petal-curl));
+  transform-origin: 50% 92%;
+}
+
+.rose-petal::before {
+  position: absolute;
+  inset: 9% 15% 18% 16%;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse at 44% 16%, rgba(255, 255, 255, 0.5), transparent 34%),
+    linear-gradient(120deg, transparent 28%, rgba(255, 255, 255, 0.18), transparent 58%);
+  opacity: 0.68;
+  animation: rose-petal-sheen 4.8s ease-in-out infinite;
+  content: "";
+}
+
+.rose-petal::after {
+  position: absolute;
+  top: 16%;
+  bottom: 10%;
+  left: 50%;
+  width: 1px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(83, 0, 31, 0.32), transparent);
+  box-shadow:
+    -11px 22px 0 rgba(255, 255, 255, 0.09),
+    10px 29px 0 rgba(90, 0, 34, 0.16),
+    -17px 48px 0 rgba(90, 0, 34, 0.1);
+  content: "";
+  transform: rotate(-4deg);
+}
+
+.rose-petal-outer {
+  border-radius: 64% 36% 70% 30% / 78% 70% 36% 22%;
+}
+
+.rose-petal-middle {
+  border-radius: 56% 44% 58% 42% / 76% 72% 30% 24%;
+}
+
+.rose-petal-inner {
+  border-radius: 52% 48% 48% 52% / 80% 72% 28% 22%;
+}
+
+.rose-core-fold-wrap {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  z-index: var(--fold-z);
+  width: var(--fold-width);
+  height: var(--fold-height);
+  margin-top: var(--fold-margin-y);
+  margin-left: var(--fold-margin-x);
+  filter: drop-shadow(0 5px 5px rgba(69, 4, 25, 0.22));
+  transform-origin: 50% 94%;
+}
+
+.rose-core-fold {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: 50% 50% 45% 45% / 82% 82% 28% 28%;
+  background:
+    radial-gradient(ellipse at 38% 14%, #ffe4ea, transparent 30%),
+    linear-gradient(145deg, #ff8098, #be123c 48%, #5f071f);
+  box-shadow:
+    inset 7px 8px 9px rgba(255, 255, 255, 0.26),
+    inset -9px -14px 14px rgba(43, 0, 18, 0.52);
+  transform: translate(var(--fold-shift-x), var(--fold-shift-y));
+}
+
+.rose-core-fold::after {
+  position: absolute;
+  top: 12%;
+  right: 27%;
+  bottom: 14%;
+  width: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(80, 0, 28, 0.3));
+  content: "";
+}
+
+.rose-center-shadow {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  z-index: 82;
+  width: 48px;
+  height: 36px;
+  margin-top: -16px;
+  margin-left: -24px;
+  border-radius: 9999px;
+  background: radial-gradient(ellipse at center, rgba(58, 0, 22, 0.52), rgba(58, 0, 22, 0.18) 48%, transparent 72%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.rose-dew {
+  position: absolute;
+  z-index: 90;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 36% 30%, rgba(255, 255, 255, 0.96) 0 16%, rgba(255, 255, 255, 0.56) 17% 34%, rgba(255, 255, 255, 0.16) 35% 100%);
+  box-shadow:
+    inset -1px -2px 2px rgba(255, 255, 255, 0.42),
+    0 2px 4px rgba(83, 0, 31, 0.22);
+  backdrop-filter: blur(0.5px);
+}
+
+@keyframes rose-petal-sheen {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.84;
+  }
+}
