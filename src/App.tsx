@@ -629,8 +629,7 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
         </AnimatePresence>
 
         <p className="mt-5 text-xs text-slate-500">
-          Dev note: change <span className="font-bold">MAGIC_WORD</span> in
-          App.tsx later.
+          Dev note: I chose this one cause you're my sun
         </p>
       </div>
     </motion.section>
